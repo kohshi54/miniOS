@@ -38,3 +38,11 @@ void start(void) {
         "call main\n"
         "call exit\n" ::[stack_top] "r"(__stack_top));
 }
+
+int readfile(const char *filename, char *buf, int len) {
+    return syscall(SYS_READFILE, (int) filename, (int) buf, len);
+}
+
+int writefile(const char *filename, const char *buf, int len) {
+    return syscall(SYS_WRITEFILE, (int) filename, (int) buf, len);
+}
