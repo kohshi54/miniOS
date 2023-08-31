@@ -79,3 +79,7 @@ struct process {
 #define PAGE_W    (1 << 2)   // 書き込み可能
 #define PAGE_X    (1 << 3)   // 実行可能
 #define PAGE_U    (1 << 4)   // ユーザーモードでアクセス可能
+
+#define USER_BASE 0x1000000
+
+#define SSTATUS_SPIE (1 << 5)
